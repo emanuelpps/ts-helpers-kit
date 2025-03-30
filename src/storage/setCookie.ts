@@ -1,0 +1,1 @@
+//•	setCookie(name: string, value: string, days: number): void
