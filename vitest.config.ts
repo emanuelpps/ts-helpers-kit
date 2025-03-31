@@ -10,17 +10,16 @@ export default mergeConfig(
       globals: true,
       setupFiles: "./tests/setup",
       alias: {
-        "@src": path.resolve(__dirname, "/src"),
+        "@src": path.resolve(__dirname, "src"),
       },
-      coverage: {
-        provider: "v8",
-        /* thresholds: {
+      /*       coverage: {
+        thresholds: {
           lines: 50,
           functions: 50,
           branches: 50,
-          statements: 50,
-        }, */
-      },
+          statements: 50
+        }
+      } */
     },
   })
 );
