@@ -1,4 +1,4 @@
-import path from "path";
+
 import { defineConfig, mergeConfig } from "vitest/config";
 
 import viteConfig from "./vite.config";
@@ -10,7 +10,7 @@ export default mergeConfig(
       globals: true,
       setupFiles: "./tests/setup",
       alias: {
-        "@src": path.resolve(__dirname, "/src"),
+        "@src": "/src",
       },
       coverage: {
         provider: "v8",
