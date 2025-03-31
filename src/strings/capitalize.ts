@@ -1,4 +1,5 @@
 import { isString } from "@src/checks/isString";
+
 export const capitalize = (text: string): string => {
   if (!isString(text)) return text;
 
