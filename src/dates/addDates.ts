@@ -1,3 +1,5 @@
-/*export const addDates = (date: Date, days: number) : Date => {
-    const daysToAdd = date.getDay() + days;
-}*/
+export const addDates = (date: Date, days: number): Date => {
+  const result = new Date(date);
+  result.setDate(result.getDate() + days);
+  return result;
+};

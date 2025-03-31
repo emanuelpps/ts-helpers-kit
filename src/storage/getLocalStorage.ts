@@ -1,0 +1,1 @@
+//•	getLocalStorage<T>(key: string): T | null
