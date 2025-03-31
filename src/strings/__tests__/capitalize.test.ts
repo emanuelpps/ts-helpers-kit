@@ -20,18 +20,19 @@ describe("capitalize", () => {
     const result = capitalize("  hello world  ");
     expect(result).toBe("  hello world  ");
   });
+
   it("should return the input if it is not a string (number)", () => {
-    const result = capitalize(123 as any);
+    const result = capitalize(123 as unknown as string);
     expect(result).toBe(123);
   });
 
   it("should return the input if it is not a string (null)", () => {
-    const result = capitalize(null as any);
+    const result = capitalize(null as unknown as string);
     expect(result).toBe(null);
   });
 
   it("should return the input if it is not a string (undefined)", () => {
-    const result = capitalize(undefined as any);
+    const result = capitalize(undefined as unknown as string);
     expect(result).toBe(undefined);
   });
 
