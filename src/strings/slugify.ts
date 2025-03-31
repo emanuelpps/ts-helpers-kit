@@ -1,4 +1,6 @@
+import { isString } from "@src/checks/isString";
 export const slugify = (text: string): string => {
+  if (!isString(text)) return text;
   return text
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
