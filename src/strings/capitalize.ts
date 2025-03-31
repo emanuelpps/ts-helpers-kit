@@ -1,3 +1,8 @@
+import { isString } from "@src/checks/isString";
+
 export const capitalize = (text: string): string => {
-  return text.charAt(0).toLocaleUpperCase() + text.slice(1);
+  if (!isString(text)) return text;
+
+  const normalized = text.toLocaleLowerCase();
+  return normalized.charAt(0).toLocaleUpperCase() + normalized.slice(1);
 };

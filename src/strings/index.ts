@@ -1,4 +1,4 @@
 export * from "./slugify";
 export * from "./capitalize";
-export * from "./randmoString";
+export * from "./randomString";
 export * from "./truncate";
