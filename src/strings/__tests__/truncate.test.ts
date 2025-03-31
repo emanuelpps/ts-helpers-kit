@@ -22,6 +22,10 @@ describe("truncate", () => {
     expect(truncate("hi", 5)).toBe("hi");
   });
 
+  it("should return the text unchanged if length is undefined", () => {
+    expect(truncate("hello", undefined as any)).toBe("hello");
+  });
+
   it("should handle special characters properly", () => {
     expect(truncate("hello @world!", 5)).toBe("hello...");
   });
