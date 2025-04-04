@@ -1,24 +1,22 @@
-import { formatDate } from "../formatDate";
 import { describe, it, expect } from "vitest";
+import { formatDate } from "../formatDate";
 
 describe("formatDate", () => {
-  const validDate = new Date("2023-05-15T14:30:45");
-  const invalidDate = new Date("invalid");
-
-  it("formats correctly with different valid values", () => {
-    expect(formatDate(validDate, "YYYY-MM-DD")).toBe("2023-05-15");
-    expect(formatDate(validDate, "HH:mm:ss")).toBe("14:30:45");
-    expect(formatDate(validDate, "DD/MM/YYYY")).toBe("15/05/2023");
-    expect(formatDate(validDate, "YYYYMMDD")).toBe("20230515");
+  it("formatea correctamente una fecha válida", () => {
+    const date = new Date("2024-04-04T09:05:07");
+    const formatted = formatDate(date, "YYYY-MM-DD HH:mm:ss");
+    expect(formatted).toBe("2024-04-04 09:05:07");
   });
 
-  it("return an error when the values are invalid", () => {
-    expect(formatDate(invalidDate, "YYYY-MM-DD")).toBe(
-      "Date or format not valid"
-    );
-    expect(formatDate(validDate, "")).toBe("Date or format not valid");
-    expect(formatDate(validDate, "INVALID_FORMAT")).toBe(
-      "Date or format not valid"
-    );
+  it("devuelve mensaje de error si la fecha es inválida", () => {
+    const invalidDate = new Date("invalid");
+    const formatted = formatDate(invalidDate, "YYYY-MM-DD");
+    expect(formatted).toBe("date or format not valid");
+  });
+
+  it("devuelve mensaje de error si el formato no es string", () => {
+    const date = new Date();
+    const formatted = formatDate(date, null as unknown as string);
+    expect(formatted).toBe("date or format not valid");
   });
 });

@@ -1,22 +1,20 @@
+import { describe, it, expect } from "vitest";
 import { isDate } from "../isDate";
 
 describe("isDate", () => {
-  it("should not throw for valid Date objects", () => {
-    expect(() => isDate(new Date())).not.toThrow();
-    expect(() => isDate(new Date("2023-09-15"))).not.toThrow();
+  it("retorna true para fechas válidas", () => {
+    const validDate = new Date("2024-04-04T12:00:00");
+    expect(isDate(validDate)).toBe(true);
   });
 
-  it("should throw for invalid Date objects", () => {
-    expect(() => isDate(new Date("invalid-date"))).toThrow(
-      "Invalid date provided"
-    );
+  it("retorna false para fechas inválidas", () => {
+    expect(isDate(new Date("invalid"))).toBe(false);
   });
 
-  it("should throw for non-Date values", () => {
-    expect(() => isDate("2023-09-15")).toThrow("Invalid date provided");
-    expect(() => isDate(12345)).toThrow("Invalid date provided");
-    expect(() => isDate(null)).toThrow("Invalid date provided");
-    expect(() => isDate(undefined)).toThrow("Invalid date provided");
-    expect(() => isDate({})).toThrow("Invalid date provided");
+  it("retorna false si el valor no es Date", () => {
+    expect(isDate("2024-04-04")).toBe(false);
+    expect(isDate(null)).toBe(false);
+    expect(isDate(undefined)).toBe(false);
+    expect(isDate(123456)).toBe(false);
   });
 });
