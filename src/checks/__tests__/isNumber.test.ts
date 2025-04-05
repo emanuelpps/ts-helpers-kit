@@ -1,19 +1,23 @@
-import { describe, it, expect } from "vitest";
 import { isNumber } from "../isNumber";
+import { describe, it, expect } from "vitest";
+
 describe("isNumber", () => {
-  it("Should return TRUE if the value is number", () => {
-    expect(isNumber(100)).toBe(true);
+  it("identifies valid numbers", () => {
+    expect(isNumber(42)).toBe(true);
     expect(isNumber(0)).toBe(true);
+    expect(isNumber(-3.14)).toBe(true);
   });
 
-  it("Should return FALSE if the value is not a number", () => {
-    expect(isNumber("")).toBe(false);
-    expect(isNumber("hola")).toBe(false);
-    expect(isNumber("123")).toBe(false);
-    expect(isNumber(true)).toBe(false);
-    expect(isNumber({})).toBe(false);
-    expect(isNumber([])).toBe(false);
-    expect(isNumber(undefined)).toBe(false);
+  it("rejects non-numbers", () => {
+    expect(isNumber("42")).toBe(false);
     expect(isNumber(null)).toBe(false);
+    expect(isNumber(undefined)).toBe(false);
+    expect(isNumber({})).toBe(false);
+  });
+
+  it("rejects special number cases", () => {
+    expect(isNumber(NaN)).toBe(false);
+    expect(isNumber(Infinity)).toBe(false);
+    expect(isNumber(-Infinity)).toBe(false);
   });
 });

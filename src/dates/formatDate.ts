@@ -1,4 +1,11 @@
+import { isString } from "@src/checks";
+import { isDate } from "@src/checks/isDate";
+
 export const formatDate = (date: Date, format: string): string => {
+  if (!isDate(date) || !isString(format)) {
+    return "date or format not valid";
+  }
+
   const map: { [key: string]: string } = {
     YYYY: date.getFullYear().toString(),
     MM: String(date.getMonth() + 1).padStart(2, "0"),
