@@ -12,14 +12,14 @@ export default mergeConfig(
       alias: {
         "@src": path.resolve(__dirname, "src"),
       },
-      /*       coverage: {
+      coverage: {
         thresholds: {
           lines: 50,
           functions: 50,
           branches: 50,
-          statements: 50
-        }
-      } */
+          statements: 50,
+        },
+      },
     },
   })
 );
