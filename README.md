@@ -136,40 +136,114 @@ import { formatDate } from 'ts-helpers-kit';
 console.log(formatDate(new Date(), 'YYYY-MM-DD'));
 ```
 
-## Function Reference
+# 📚 Utility Functions Reference
 
-### `formatDate(date: Date, format: string): string`
+## 🔤 String Manipulation
+Functions to work with text strings, useful in any application.
 
-Formats a date based on a format string.
+### `slugify(text: string): string`
+Converts a string into a SEO-friendly slug.  
+Example: `'Hello World!' → 'hello-world'`
 
-### `addDays(date: Date, days: number): Date`
+### `capitalize(text: string): string`
+Converts the first letter to uppercase.  
+Example: `'hello' → 'Hello'`
 
-Returns a new date N days ahead.
+### `truncate(text: string, length: number): string`
+Truncates a string and adds ellipsis if it's too long.  
+Example: `'This is a long string' → 'This is a…'`
 
-### `setLocalStorage(key: string, value: string): void`
-
-Saves a value to localStorage.
-
-### `getLocalStorage(key: string): string | null`
-
-Gets a value from localStorage.
-
-### `removeLocalStorage(key: string): void`
-
-Removes a value from localStorage.
-
-### `setCookie(name: string, value: string, days: number): void`
-
-Sets a cookie with an expiry in days.
-
-### `getCookie(name: string): string | null`
-
-Retrieves a cookie by name.
-
-### `deleteCookie(name: string): void`
-
-Deletes a cookie by name.
+### `randomString(length: number): string`
+Generates a random alphanumeric string.  
+Example: `'randomString(8)' → 'aZ8h1jP3'`
 
 ---
+
+## 🔢 Numbers and Currency
+Helps with calculations and number formatting.
+
+### `formatCurrency(amount: number, locale: string, currency: string): string`
+Formats a number as currency.  
+Example: `formatCurrency(2500, 'en-US', 'USD') → '$2,500.00'`
+
+### `clamp(value: number, min: number, max: number): number`
+Restricts a number within a range.  
+Example: `clamp(120, 0, 100) → 100`
+
+### `randomInt(min: number, max: number): number`
+Generates a random number between two values.  
+Example: `randomInt(1, 10) → 7`
+
+---
+
+## 🕒 Dates and Time
+Common functions for formatting and handling dates.
+
+### `formatDate(date: Date, format: string): string`
+Formats a date into a custom format.  
+Example: `formatDate(new Date(), 'YYYY-MM-DD') → '2025-04-07'`
+
+### `timeAgo(date: Date): string`
+Returns a human-readable relative time.  
+Example: `'1 minute ago', '3 days ago'`
+
+### `addDays(date: Date, days: number): Date`
+Adds a number of days to a date.  
+Example: `addDays(new Date(), 5) → [Date +5 days]`
+
+### `isWeekend(date: Date): boolean`
+Checks if the given date falls on a weekend.  
+Example: `isWeekend(new Date('2025-04-06')) → true`
+
+---
+
+## 💾 Storage and Cookies
+Functions for managing `localStorage`, `sessionStorage`, and cookies.
+
+### `setLocalStorage(key: string, value: any): void`
+Stores a value in `localStorage`.
+
+### `getLocalStorage<T>(key: string): T | null`
+Retrieves a value from `localStorage`.
+
+### `setCookie(name: string, value: string, days: number): void`
+Sets a cookie with expiration in days.
+
+### `getCookie(name: string): string | null`
+Gets a cookie by name.
+
+---
+
+## 🧠 Data Structures and Algorithms
+Utilities to manipulate arrays and objects.
+
+### `deepClone<T>(obj: T): T`
+Clones an object without references.
+
+### `deepMerge<T>(target: T, source: T): T`
+Deeply merges two objects without overwriting nested properties.
+
+### `groupBy<T>(array: T[], key: keyof T): Record<string, T[]>`
+Groups array elements by a key.
+
+---
+
+## ⚙️ General Utility Functions
+Practical helpers to improve code quality.
+
+### `debounce(func: Function, delay: number): Function`
+Controls repeated execution of a function by delaying it.
+
+### `throttle(func: Function, limit: number): Function`
+Limits function execution within a specified time window.
+
+### `isEmpty(value: any): boolean`
+Checks if an object, array, or string is empty.
+
+### `uuid(): string`
+Generates a unique UUID.
+
+---
+
 
 > MIT License • Made with ❤️ by [@emanuelpps](https://github.com/emanuelpps)
