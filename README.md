@@ -1,6 +1,6 @@
 # ts-helpers-kit
 
-![ts-helpers-kit Logo](./ts-helpers-kit-logo.png)
+![ts-helpers-kit Logo](https://res.cloudinary.com/dkgoszhfr/image/upload/f_auto,q_auto/oflmqaopyk2qibrwvhay)
 
 [![npm](https://img.shields.io/npm/v/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
 [![Types](https://img.shields.io/npm/types/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
