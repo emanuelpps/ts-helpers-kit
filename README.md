@@ -1,167 +1,175 @@
-# 📦 ts-helpers-kit
+# ts-helpers-kit
 
-A modern, lightweight, and type-safe utility library for TypeScript projects. Supercharge your development with battle-tested helper functions for date manipulation, localStorage, cookies, and more – ready to plug into React, Vue, Angular, or any Vanilla TypeScript app.
+![ts-helpers-kit Logo](./ts-helpers-kit-logo.png)
 
-![npm](https://img.shields.io/npm/v/ts-helpers-kit)
-![types](https://img.shields.io/npm/types/ts-helpers-kit)
-![license](https://img.shields.io/npm/l/ts-helpers-kit)
-![coverage](https://img.shields.io/badge/tested-yes-brightgreen)
-![CI](https://img.shields.io/github/actions/workflow/status/emanuelpps/ts-helpers-kit/tests.yml)
+[![npm](https://img.shields.io/npm/v/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
+[![Types](https://img.shields.io/npm/types/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
+[![License](https://img.shields.io/npm/l/ts-helpers-kit)](LICENSE)
+[![Coverage Status](https://img.shields.io/coveralls/github/emanuelpps/ts-helpers-kit)](https://coveralls.io/github/emanuelpps/ts-helpers-kit)
+[![CI](https://github.com/emanuelpps/ts-helpers-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/emanuelpps/ts-helpers-kit/actions)
 
----
+**ts-helpers-kit** is a modern, lightweight, and type-safe utility library for TypeScript projects. It provides handy helper functions for date manipulation, localStorage, cookies, and more. It is compatible with all frontend frameworks or plain TypeScript environments.
 
-## 🚀 Why ts-helpers-kit?
+## Features
 
-✅ **Lightweight & Fast** – No dependencies. Tree-shakable helpers.  
-✅ **TypeScript First** – Written in strict TypeScript.  
-✅ **Framework Agnostic** – Works in React, Vue, Angular, Svelte, or Vanilla TS.  
-✅ **Battle-tested** – Fully unit tested with [Vitest](https://vitest.dev).  
-✅ **Modular** – Import only what you need.
+- **Lightweight & Fast**: No external dependencies and supports tree-shaking.
+- **TypeScript First**: Fully written in TypeScript with strict type safety.
+- **Framework Agnostic**: Works with React, Vue, Angular, Svelte, or plain TS.
+- **Tested**: Fully covered with [Vitest](https://vitest.dev/).
+- **Modular**: Import only what you need.
 
----
-
-## 📦 Installation
+## Installation
 
 ```bash
 npm install ts-helpers-kit
-# or
-yarn add ts-helpers-kit
-# or
-pnpm add ts-helpers-kit
 ```
 
----
+or with Yarn:
 
-## 🛠️ Usage Examples
+```bash
+yarn add ts-helpers-kit
+```
 
-### ✅ Vanilla TypeScript
+## Usage
+
+### Date Manipulation
 
 ```ts
-import { setCookie, getCookie } from 'ts-helpers-kit';
+import { formatDate, addDays } from 'ts-helpers-kit';
 
-setCookie('token', 'abc123', 7);
-const token = getCookie('token');
+const formatted = formatDate(new Date(), 'YYYY-MM-DD');
+console.log(formatted); // '2025-04-07'
+
+const newDate = addDays(new Date(), 3);
+console.log(newDate); // 3 days later
 ```
 
----
+### localStorage Helpers
 
-### ✅ React
+```ts
+import { setLocalStorage, getLocalStorage, removeLocalStorage } from 'ts-helpers-kit';
+
+setLocalStorage('token', 'abc123');
+console.log(getLocalStorage('token')); // 'abc123'
+removeLocalStorage('token');
+```
+
+### Cookie Helpers
+
+```ts
+import { setCookie, getCookie, deleteCookie } from 'ts-helpers-kit';
+
+setCookie('user', 'Jane Doe', 7);
+console.log(getCookie('user')); // 'Jane Doe'
+deleteCookie('user');
+```
+
+## Framework Examples
+
+### React
 
 ```tsx
-import { getLocalStorage, setLocalStorage } from 'ts-helpers-kit';
+const App = () => {
+  const [theme, setTheme] = useState(() => getLocalStorage('theme') || 'light');
 
-useEffect(() => {
-  const user = getLocalStorage('user');
-  if (!user) {
-    setLocalStorage('user', { name: 'Emanuel' });
-  }
-}, []);
+  useEffect(() => {
+    setLocalStorage('theme', theme);
+  }, [theme]);
+
+  return (
+    <div className={theme}>
+      <button onClick={() => setTheme('light')}>Light</button>
+      <button onClick={() => setTheme('dark')}>Dark</button>
+    </div>
+  );
+};
 ```
 
----
+### Vue
 
-### ✅ Angular
+```vue
+<script setup>
+import { ref, watch } from 'vue';
+import { getLocalStorage, setLocalStorage } from 'ts-helpers-kit';
+
+const theme = ref(getLocalStorage('theme') || 'light');
+watch(theme, (newValue) => setLocalStorage('theme', newValue));
+</script>
+
+<template>
+  <div :class="theme">
+    <button @click="theme = 'light'">Light</button>
+    <button @click="theme = 'dark'">Dark</button>
+  </div>
+</template>
+```
+
+### Angular
 
 ```ts
-import { getCookie } from 'ts-helpers-kit';
-
-@Component({ ... })
-export class AppComponent {
+@Component({
+  selector: 'app-root',
+  template: `
+    <div [ngClass]="theme">
+      <button (click)="setTheme('light')">Light</button>
+      <button (click)="setTheme('dark')">Dark</button>
+    </div>
+  `,
+})
+export class AppComponent implements OnInit {
+  theme = 'light';
   ngOnInit() {
-    const token = getCookie('authToken');
-    console.log(token);
+    this.theme = getLocalStorage('theme') || 'light';
+  }
+  setTheme(theme: string) {
+    this.theme = theme;
+    setLocalStorage('theme', theme);
   }
 }
 ```
 
----
-
-### ✅ Vue
+### Node.js
 
 ```ts
-<script setup lang="ts">
-import { getLocalStorage } from 'ts-helpers-kit';
+import { formatDate } from 'ts-helpers-kit';
 
-const user = getLocalStorage('user');
-</script>
+console.log(formatDate(new Date(), 'YYYY-MM-DD'));
 ```
 
----
+## Function Reference
 
-## 📚 Available Helpers
+### `formatDate(date: Date, format: string): string`
 
-### 📅 `dates/`
+Formats a date based on a format string.
 
-- `getTodayFormatted()` → `'YYYY-MM-DD'`
-- `formatDate(date: string | Date, format?: string)`
-- `isWeekend(date: string | Date)`
-- `addDays(date: string | Date, days: number)`
-- `getWeekdayName(date: string | Date)`
+### `addDays(date: Date, days: number): Date`
 
-### 🍪 `storage/`
+Returns a new date N days ahead.
 
-#### Cookies
-- `getCookie(key: string): string | null`
-- `setCookie(key: string, value: string, days: number)`
+### `setLocalStorage(key: string, value: string): void`
 
-#### Local Storage
-- `getLocalStorage<T>(key: string): T | null`
-- `setLocalStorage<T>(key: string, value: T): void`
+Saves a value to localStorage.
 
-> All functions are **fully typed** and **strict-mode compatible**.
+### `getLocalStorage(key: string): string | null`
 
----
+Gets a value from localStorage.
 
-## ✅ Type Safety
+### `removeLocalStorage(key: string): void`
 
-All functions are written in `strict` mode TypeScript. You get full type inference and safety across all operations, even with generics.
+Removes a value from localStorage.
 
-```ts
-const user = getLocalStorage<{ name: string }>('user');
-```
+### `setCookie(name: string, value: string, days: number): void`
 
----
+Sets a cookie with an expiry in days.
 
-## 📂 Project Structure
+### `getCookie(name: string): string | null`
 
-```
-ts-helpers-kit/
-├── src/
-│   ├── dates/
-│   └── storage/
-├── tests/
-├── tsconfig.json
-├── vitest.config.ts
-└── ...
-```
+Retrieves a cookie by name.
+
+### `deleteCookie(name: string): void`
+
+Deletes a cookie by name.
 
 ---
 
-## 🧪 Tests
-
-All helpers are tested using [Vitest](https://vitest.dev).
-
-```bash
-npm test
-```
-
----
-
-## 📢 Spread the Word
-
-If this project saves you time, consider giving it a ⭐ on GitHub!  
-Follow the author [@emanuelpps](https://github.com/emanuelpps) for more projects like this.
-
----
-
-## 🧩 Coming Soon
-
-- `url` helpers: `getQueryParam`, `buildURL`
-- `string` utils: `slugify`, `capitalize`
-- `validation`: `isEmail`, `isPhoneNumber`
-
----
-
-## 📄 License
-
-MIT © [Emanuel Pages](https://github.com/emanuelpps)
+> MIT License • Made with ❤️ by [@emanuelpps](https://github.com/emanuelpps)
