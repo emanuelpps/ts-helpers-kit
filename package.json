@@ -1,6 +1,6 @@
 {
-  "name": "ts-helpers-kit",
-  "version": "1.0.3",
+  "name": "@emanuelpps/ts-helpers-kit",
+  "version": "1.0.4",
   "description": "A lightweight utility library for TypeScript projects",
   "keywords": [
     "typescript",

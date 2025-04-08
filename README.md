@@ -1,7 +1,12 @@
-# ts-helpers-kit
+# @emanuelpps/ts-helpers-kit
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dkgoszhfr/image/upload/f_auto,q_auto/oflmqaopyk2qibrwvhay" alt="ts-helpers-kit Logo" width="200"/>
+  <img 
+    src="https://res.cloudinary.com/dkgoszhfr/image/upload/f_auto,q_auto/hiofmygmttwrrqxzrxdc" 
+    alt="ts-helpers-kit Logo" 
+    width="200"
+    style="border-radius: 10px;"
+  />
 </p>
 
 
