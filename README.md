@@ -1,4 +1,4 @@
-# @emanuelpps/ts-helpers-kit
+# @ts-helpers-kit
 
 <p align="center">
   <img 
