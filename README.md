@@ -7,9 +7,6 @@
 
 [![npm](https://img.shields.io/npm/v/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
 [![Types](https://img.shields.io/npm/types/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
-[![License](https://img.shields.io/npm/l/ts-helpers-kit)](LICENSE)
-[![Coverage Status](https://img.shields.io/coveralls/github/emanuelpps/ts-helpers-kit)](https://coveralls.io/github/emanuelpps/ts-helpers-kit)
-[![CI](https://github.com/emanuelpps/ts-helpers-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/emanuelpps/ts-helpers-kit/actions)
 
 **ts-helpers-kit** is a modern, lightweight, and type-safe utility library for TypeScript projects. It provides handy helper functions for date manipulation, localStorage, cookies, and more. It is compatible with all frontend frameworks or plain TypeScript environments.
 
