@@ -34,7 +34,6 @@ Find the full source code and contribute on GitHub:
 - You keep your TypeScript codebase clean, safe, and readable.
 - You avoid installing big libraries just for a few helpers.
 - You can use it in any environment (browser, SSR, Node).
-- You support a developer-friendly OSS library built with ❤️.
 
 ---
 
