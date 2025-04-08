@@ -25,6 +25,11 @@
     "test:watch": "vitest --watch",
     "test:mutation": "stryker run"
   },
+  "coverage": {
+    "provider": "v8",
+    "reportsDirectory": "./coverage"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.23.0",
     "@types/node": "^22.13.13",
