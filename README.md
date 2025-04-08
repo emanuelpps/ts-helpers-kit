@@ -1,6 +1,9 @@
 # ts-helpers-kit
 
-![ts-helpers-kit Logo](https://res.cloudinary.com/dkgoszhfr/image/upload/f_auto,q_auto/oflmqaopyk2qibrwvhay)
+<p align="center">
+  <img src="https://res.cloudinary.com/dkgoszhfr/image/upload/f_auto,q_auto/oflmqaopyk2qibrwvhay" alt="ts-helpers-kit Logo" width="200"/>
+</p>
+
 
 [![npm](https://img.shields.io/npm/v/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
 [![Types](https://img.shields.io/npm/types/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
