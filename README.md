@@ -246,4 +246,4 @@ Generates a unique UUID.
 ---
 
 
-> MIT License • Made with ❤️ by [@emanuelpps](https://github.com/emanuelpps)
+> MIT License • Made by [@emanuelpps](https://github.com/emanuelpps)
