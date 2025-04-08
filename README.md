@@ -8,6 +8,7 @@
 [![npm](https://img.shields.io/npm/v/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
 [![Types](https://img.shields.io/npm/types/ts-helpers-kit)](https://www.npmjs.com/package/ts-helpers-kit)
 
+
 **ts-helpers-kit** is a modern, lightweight, and type-safe utility library for TypeScript projects. It provides handy helper functions for date manipulation, localStorage, cookies, and more. It is compatible with all frontend frameworks or plain TypeScript environments.
 
 ## Features
@@ -17,6 +18,25 @@
 - **Framework Agnostic**: Works with React, Vue, Angular, Svelte, or plain TS.
 - **Tested**: Fully covered with [Vitest](https://vitest.dev/).
 - **Modular**: Import only what you need.
+
+---
+
+## 📦 Repository
+
+Find the full source code and contribute on GitHub:
+
+🔗 **[github.com/emanuelpps/ts-helpers-kit](https://github.com/emanuelpps/ts-helpers-kit)**
+
+
+## 💬 Why Use ts-helpers-kit?
+
+- You save hours of repetitive code.
+- You keep your TypeScript codebase clean, safe, and readable.
+- You avoid installing big libraries just for a few helpers.
+- You can use it in any environment (browser, SSR, Node).
+- You support a developer-friendly OSS library built with ❤️.
+
+---
 
 ## Installation
 
@@ -242,6 +262,13 @@ Checks if an object, array, or string is empty.
 
 ### `uuid(): string`
 Generates a unique UUID.
+
+
+---
+
+## 🔑 Keywords
+
+`typescript` `helpers` `utilities` `toolkit` `ts` `localStorage` `cookies` `dates` `strings` `frontend` `typescript library` `utility functions` `javascript` `react` `vue` `angular` `nodejs` `npm` `webdev`
 
 ---
 
