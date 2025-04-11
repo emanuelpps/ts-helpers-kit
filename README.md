@@ -28,7 +28,7 @@
 
 ## 📦 Repository
 
-Find the full source code and contribute on GitHub:
+Find the full source code on GitHub:
 
 🔗 **[github.com/emanuelpps/ts-helpers-kit](https://github.com/emanuelpps/ts-helpers-kit)**
 
